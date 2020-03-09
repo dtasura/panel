@@ -1,0 +1,274 @@
+{% extends '../base.html' %}
+
+{% block title %}
+<title>Panel iMax</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="min-width:520px;">
+    <div>
+
+        <div class="card">
+            <div class="card-header" id="ko">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inicio">PEDIDOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/generar">PREPARAR ENVIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="#">INFORMES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/personal" tabindex="-1">PERSONAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OTROS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+              <div class="row mx-md-n5">
+                  <div class="col-4 px-md-5" style="min-width:480px;">
+                    <div class="p-3 border bg-light">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pedidos por fhecha</a>
+                        </div>
+                        <div class="btn-group"  aria-label="Basic example">
+                          <select id="inputState" class="form-control mr-sm-1" style="width:100px;">
+                            <option selected>Choose...</option>
+                            <option>Enero</option>
+                            <option>Febrero</option>
+                            <option>Marzo</option>
+                            <option>Abril</option>
+                            <option>Mayo</option>
+                            <option>Junio</option>
+                            <option>...</option>
+                          </select>
+                          <button type="button" class="btn btn-secondary active">Todos</button>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="overflow-auto" style="max-height:790px;">
+
+                      <div class="card mb-2"  style="cursor: pointer;" id="mydiv1" onclick="despliega(2,'mydiv1');">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-5 text-center">
+                              <h5 class="card-title">Jueves </h5>
+                              <h6 class="card-subtitle mb-2 text-muted display-3">01</h6>
+                              <h5 class="card-subtitle">Noviembre</h5>
+                            </div>
+                            <div class="col"><br><br>
+                              <p class="card-subtitle mb-2 text-muted">48 Solicitudos</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 860.00</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 160.00</p>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="card mb-2"  style="cursor: pointer;" id="mydiv2" onclick="despliega(5,'mydiv2');">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-5 text-center">
+                              <h5 class="card-title">Miercole </h5>
+                              <h6 class="card-subtitle mb-2 text-muted display-3">31</h6>
+                              <h5 class="card-subtitle">Octubre</h5>
+                            </div>
+                            <div class="col"><br><br>
+                              <p class="card-subtitle mb-2 text-muted">48 Solicitudos</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 860.00</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 160.00</p>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="card mb-2"  style="cursor: pointer;" id="mydiv3" onclick="despliega(5,'mydiv3');">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-5 text-center">
+                              <h5 class="card-title">Martes </h5>
+                              <h6 class="card-subtitle mb-2 text-muted display-3">30</h6>
+                              <h5 class="card-subtitle">Octubre</h5>
+                            </div>
+                            <div class="col"><br><br>
+                              <p class="card-subtitle mb-2 text-muted">48 Solicitudos</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 860.00</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 160.00</p>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="card mb-2"  style="cursor: pointer;" id="mydiv4" onclick="despliega(1,'mydiv4');">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-5 text-center">
+                              <h5 class="card-title">Lunes </h5>
+                              <h6 class="card-subtitle mb-2 text-muted display-3">29</h6>
+                              <h5 class="card-subtitle">Octubre</h5>
+                            </div>
+                            <div class="col"><br><br>
+                              <p class="card-subtitle mb-2 text-muted">48 Solicitudos</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 860.00</p>
+                              <p class="card-subtitle mb-2 text-muted"> S/ 160.00</p>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-6 px-md-5" style="min-width:480px;">
+                    <div class="p-3 border bg-light">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pedidos</a>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <button type="button" class="btn btn-secondary active">Todos</button>
+                          <button type="button" class="btn btn-secondary">Moto</button>
+                          <button type="button" class="btn btn-secondary">Furgon</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="overflow-auto" style="max-height:790px;" id="outAjax">
+
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv4" style="cursor: pointer;">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">Generado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv2" style="cursor: pointer;" onclick="detalle();">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Agencia     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">enviado 4/4 <b style="padding-left: 50%;">4 envios</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv1" style="cursor: pointer;" onclick="detalle();">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">Generado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv1" style="cursor: pointer;" onclick="detalle();">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">Generado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv1" style="cursor: pointer;" onclick="detalle();">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">Generado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card mb-2">
+                          <div class="row no-gutters">
+                              <div class="col-md-4">
+                                  <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                              </div>
+                              <div class="col-md-8" id="myDiv1" style="cursor: pointer;" onclick="detalle();">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                      <hr>
+                                      <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p>
+                                      <p class="card-text"><small class="text-muted">Generado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div>
+
+
+    </div>
+
+</div>
+
+<script>
+  var activo = null;
+  document.getElementById("myDiv4").addEventListener("click", function() {
+  location.href="/detalle";
+  }, true);
+  function detalle(){
+    location.href="/detalle";
+  }
+  function despliega(x,y){
+    var outDiv='';
+    console.log(x+2);
+    for (var i = 0; i < x; i++) {
+      outDiv += "<div class='card mb-2'><div class='row no-gutters'><div class='col-md-4'><img src='/img/01.jpg' class='card-img' alt='...' height='200'></div><div class='col-md-8' id='myDiv2' style='cursor: pointer;' onclick='detalle();'><div class='card-body'><h5 class='card-title'>Agencia     <small class='text-muted' style='padding-left: 60%;'>12:18</small></h5><hr><p class='card-text'><b><small class='text-muted'>FLO-4552AdAS</small></b><br><b>Jose Castro Perez</b><br><b>Av. Miraflores 235</b></p><p class='card-text'><small class='text-muted'>enviado 4/4 <b style='padding-left: 50%;'>4 envios</b></small></p></div></div></div></div>";
+    }
+    $('#outAjax').html(outDiv);
+    $('#'+y).addClass('bg-light');
+    $('#'+activo).removeClass('bg-light');
+    activo = y;
+  }
+</script>
+{% endblock %}

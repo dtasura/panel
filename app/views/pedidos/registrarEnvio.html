@@ -1,0 +1,55 @@
+{% extends '../base.html' %}
+
+{% block title %}
+<title>Panel iMax</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+
+        <div class="card">
+            <div class="card-header">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{title}}</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary active">Todos</button>
+                  <button type="button" class="btn btn-secondary">Moto</button>
+                  <button type="button" class="btn btn-secondary">Furgon</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row d-flex">
+                <!-- Button trigger modal -->
+
+
+
+
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div>
+
+
+    </div>
+
+</div>
+
+<script>
+  document.getElementById("myDiv1").addEventListener("click", function() {
+    location.href="/detalle";
+}, true);
+document.getElementById("myDiv2").addEventListener("click", function() {
+location.href="/detalle";
+}, true);
+document.getElementById("myDiv3").addEventListener("click", function() {
+location.href="/detalle";
+}, true);
+</script>
+{% endblock %}

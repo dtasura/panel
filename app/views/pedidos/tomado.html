@@ -1,0 +1,101 @@
+{% extends '../base.html' %}
+
+{% block title %}
+<title>Panel iMax</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+
+        <div class="card">
+            <div class="card-header">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{title}}</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary active">Todos</button>
+                  <button type="button" class="btn btn-secondary">Moto</button>
+                  <button type="button" class="btn btn-secondary">Furgon</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row d-flex">
+      {% for key in cantidad %}
+                <div class="card mr-sm-4 mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                        </div>
+                        <div class="col-md-8" id="myDiv1" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">Domicilio     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                <hr>
+                                <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Helley Maguiña </b><br><b>Av. Miraflores 235</b></p>
+                                <p class="card-text"><small class="text-muted">Tomado hace 3 minutos <b style="padding-left: 30%;">1 entrega</b></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mr-sm-4 mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                        </div>
+                        <div class="col-md-8" id="myDiv2" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">Agencia     <small class="text-muted" style="padding-left: 60%;">12:18</small></h5>
+                                <hr>
+                                <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Agapito Taipe</b><br><b>Av. Miraflores 235</b></p>
+                                <p class="card-text"><small class="text-muted">Tomado hace 3 minutos <b style="padding-left: 30%;">4 envios</b></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mr-sm-4 mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="/img/01.jpg" class="card-img" alt="..." height="200">
+                        </div>
+                        <div class="col-md-8" id="myDiv3" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">iMax Cargo     <small class="text-muted" style="padding-left: 50%;">12:18</small></h5>
+                                <hr>
+                                <p class="card-text"><b><small class="text-muted">FLO-4552AdAS</small></b><br><b>Gregory curioso</b><br><b>Av. Miraflores 235</b></p>
+                                <p class="card-text"><small class="text-muted">Tomado hace 3 minutos <b style="padding-left: 30%;">6 cajas</b></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endfor %}
+
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div>
+
+
+    </div>
+
+</div>
+
+<script>
+  document.getElementById("myDiv1").addEventListener("click", function() {
+location.href="/detalle";
+}, true);
+document.getElementById("myDiv2").addEventListener("click", function() {
+location.href="/detalle";
+}, true);
+document.getElementById("myDiv3").addEventListener("click", function() {
+location.href="/detalle";
+}, true);
+</script>
+{% endblock %}

@@ -1,0 +1,261 @@
+{% extends '../base.html' %}
+
+{% block title %}
+<title>Panel iMax</title>
+<link rel="stylesheet" href="/css/home.css">
+{% endblock %}
+
+{% block content %}
+<div class="container" style="min-width:520px;">
+    <div>
+
+        <div class="card">
+            <div class="card-header" id="ko">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inicio">PEDIDOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/generar">PREPARAR ENVIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/informe">INFORMES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" tabindex="-1">PERSONAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OTROS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+              <div class="row mx-md-n5">
+                  <div class="col px-md-5" style="min-width:480px;">
+                    <div class="p-3 border bg-light">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Lista de Colaboradores</a>
+                        </div>
+                        <div class="btn-group"  aria-label="Basic example">
+                          <button type="button" class="btn btn-secondary" onclick="registrar();">Nuevo</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="overflow-auto" style="max-height:790px;">
+
+                      <div class="card mb-2"  style="cursor: pointer;" onclick="despliega(2);" id="will">
+                        <div class="card-body">
+                          <div class="media">
+                            <img src="/img/02.jpg" class="align-self-center mr-3" alt="..." width="120" height="120">
+                            <div class="media-body px-md-5">
+                              <h5 class="mt-0">Carlos Quispe Acuña</h5>
+                              <h5 class="mt-0">Motorizado</h5>
+                              <h5 class="mt-0">47380128</h5>
+                              <h5 class="mt-0">987605235</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card mb-2"  style="cursor: pointer;" onclick="otros(2);" id="will2">
+                        <div class="card-body">
+                          <div class="media">
+                            <img src="/img/user.png" class="align-self-center mr-3" alt="..." width="120" height="120">
+                            <div class="media-body px-md-5">
+                              <h5 class="mt-0">Carlos Quispe Acuña</h5>
+                              <h5 class="mt-0">Motorizado</h5>
+                              <h5 class="mt-0">47380128</h5>
+                              <h5 class="mt-0">987605235</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-2"  style="cursor: pointer;" onclick="despliega(2);">
+                        <div class="card-body">
+                          <div class="media">
+                            <img src="/img/user.png" class="align-self-center mr-3" alt="..." width="120" height="120">
+                            <div class="media-body px-md-5">
+                              <h5 class="mt-0">Carlos Quispe Acuña</h5>
+                              <h5 class="mt-0">Motorizado</h5>
+                              <h5 class="mt-0">47380128</h5>
+                              <h5 class="mt-0">987605235</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-2"  style="cursor: pointer;" onclick="despliega(2);">
+                        <div class="card-body">
+                          <div class="media">
+                            <img src="/img/user.png" class="align-self-center mr-3" alt="..." width="120" height="120">
+                            <div class="media-body px-md-5">
+                              <h5 class="mt-0">Carlos Quispe Acuña</h5>
+                              <h5 class="mt-0">Motorizado</h5>
+                              <h5 class="mt-0">47380128</h5>
+                              <h5 class="mt-0">987605235</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col px-md-5" style="min-width:480px;">
+                    <div class="p-3 border bg-light">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Datos del Colaborador</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-2 invisible" id="detalle" >
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img src="/img/02.jpg" class="card-img mb-3 mt-3" alt="...">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <p class="clasificacion">
+                              <input id="radio1" type="radio" name="estrellas" value="5">
+                              <label for="radio1">&#9733;</label>
+                              <input id="radio2" type="radio" name="estrellas" value="4" checked>
+                              <label for="radio2">&#9733;</label>
+                              <input id="radio3" type="radio" name="estrellas" value="3">
+                              <label for="radio3">&#9733;</label>
+                              <input id="radio4" type="radio" name="estrellas" value="2">
+                              <label for="radio4">&#9733;</label>
+                              <input id="radio5" type="radio" name="estrellas" value="1">
+                              <label for="radio5">&#9733;</label>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Nombres y Apellidos</label>
+                                <input type="text" class="form-control" value="Carlos Quispe Acuña">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">DNI/RUC</label>
+                                <input type="text" class="form-control" value="47380128">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Telefono</label>
+                                <input type="text" class="form-control" value="987901256">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" value="carlos.acuña@gmail.com">
+                              </div>
+                              <div class="form-group">
+                                <label for="inputState">Tipo de Colaborador</label>
+                                <select id="inputState" class="custom-select mr-sm-2">
+                                  <option selected>Motorizado</option>
+                                  <option>Conductor</option>
+                                  <option>Estivador</option>
+                                  <option>Administrador</option>
+                                </select>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-dark mb-3 mr-sm-2">Actualizar Datos</button>
+                        <button type="button" class="btn btn-dark mb-3 mr-sm-2">Eliminar Colaborador</button>
+                      </div>
+                    </div>
+                    <div class="card mb-2 invisible" id="registro" >
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img src="/img/user.png" class="card-img mb-3 mt-3" alt="...">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Nombres y Apellidos</label>
+                                <input type="text" class="form-control" placeholder="Nombres y Apellidos">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">DNI/RUC</label>
+                                <input type="text" class="form-control" placeholder="Dni">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Telefono</label>
+                                <input type="text" class="form-control" placeholder="Telefono">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                <label for="inputState">Tipo de Colaborador</label>
+                                <select id="inputState" class="custom-select mr-sm-2">
+                                  <option selected>Seleccione</option>
+                                  <option>Motorizado</option>
+                                  <option>Conductor</option>
+                                  <option>Estivador</option>
+                                  <option>Administrador</option>
+                                </select>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-dark mb-3 mr-sm-2">Registrar Colaborador</button>
+                        <button type="button" class="btn btn-dark mb-3 mr-sm-2">Cancelar Registro</button>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div>
+
+
+    </div>
+
+</div>
+<script>
+  var activado = null;
+  function despliega(x){
+    $('#detalle').removeClass('invisible');
+    $('#detalle').removeClass('d-lg-none');
+    $('#will').addClass('bg-light');
+    $('#'+activado).removeClass('bg-light');
+     activado = 'will';
+    $('#registro').addClass('invisible');
+
+  }
+
+  function otros(x){
+    $('#will2').addClass('bg-light');
+    $('#detalle').addClass('invisible');
+    $('#detalle').addClass('d-lg-none');
+    $('#'+activado).removeClass('bg-light');
+    activado = 'will2';
+  }
+
+function registrar(){
+  $('#registro').removeClass('invisible');
+  $('#detalle').addClass('d-lg-none');
+  $('#'+activado).removeClass('bg-light');
+  }
+</script>
+
+{% endblock %}
